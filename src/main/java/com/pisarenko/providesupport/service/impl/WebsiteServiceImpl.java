@@ -4,12 +4,12 @@ import com.pisarenko.providesupport.model.Website;
 import com.pisarenko.providesupport.repository.WebsiteRepository;
 import com.pisarenko.providesupport.service.WebsiteService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Log4j2
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class WebsiteServiceImpl implements WebsiteService {
