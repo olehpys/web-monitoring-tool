@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface WebsiteStateService {
 
-    WebsiteState getStatus(Website website);
+    WebsiteState getState(Website website);
 
-    List<WebsiteState> getStatuses(List<Website> websites);
+    List<WebsiteState> getStates(List<Website> websites);
 
     ResponseEntity<String> getUrlResponse(Website website);
 

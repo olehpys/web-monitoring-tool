@@ -25,7 +25,7 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
 
 
     @Override
-    public WebsiteState getStatus(Website website) {
+    public WebsiteState getState(Website website) {
         ResponseEntity<String> res = getUrlResponse(website);
         WebsiteState websiteState = WebsiteState.builder()
                 .id(website.getId())
@@ -41,13 +41,13 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
     }
 
     @Override
-    public List<WebsiteState> getStatuses(List<Website> websites) {
-        List<WebsiteState> websiteStateList = new ArrayList<>();
+    public List<WebsiteState> getStates(List<Website> websites) {
+        List<WebsiteState> websiteStates = new ArrayList<>();
         for (Website website : websites) {
-            WebsiteState saved = getStatus(website);
-            websiteStateList.add(saved);
+            WebsiteState state = getState(website);
+            websiteStates.add(state);
         }
-        return websiteStateList;
+        return websiteStates;
     }
 
     @Override
@@ -57,7 +57,6 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
 
     @Override
     public long getContentLength(ResponseEntity<String> response) {
-
         log.debug("Response content length is [{}]", response.getHeaders().getContentLength());
         return response.getHeaders().getContentLength();
     }
