@@ -32,9 +32,9 @@ public class Website {
     private String expectedResponseCode;
 
     @Column(name = "min_res_value")
-    private byte expectedMinResponseValue;
+    private long expectedMinResponseValue;
 
     @Column(name = "max_res_value")
-    private byte expectedMaxResponseValue;
+    private long expectedMaxResponseValue;
 
 }
