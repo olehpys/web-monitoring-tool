@@ -2,30 +2,24 @@ package com.pisarenko.providesupport.service;
 
 import com.pisarenko.providesupport.model.StateStatus;
 import com.pisarenko.providesupport.model.Website;
-import com.pisarenko.providesupport.repository.WebsiteRepository;
-import com.pisarenko.providesupport.service.impl.WebsiteServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Collections;
-import java.util.List;
-
 @RunWith(SpringRunner.class)
-public class WebsiteServiceTest {
+@SpringBootTest
+public class WebsiteStateServiceTest {
 
-    @Mock
-    private WebsiteRepository websiteRepository;
-
-    @InjectMocks
-    private WebsiteServiceImpl websiteService;
+    @Autowired
+    WebsiteStateService restTemplateService;
 
     private Website website;
+
+    private static final double DELTA = 1e-15;
 
     @Before
     public void setUp() {
@@ -39,15 +33,12 @@ public class WebsiteServiceTest {
                 .build();
     }
 
+
     @Test
-    public void getAllWebsitesTest() {
+    public void getResponseTimeTest() {
 
-        Mockito.when(websiteRepository.findAll()).thenReturn(Collections.singletonList(website));
+        double time = restTemplateService.getResponseTime(website);
 
-        List<Website> websiteList = websiteService.getAllWebsites();
-
-        Assert.assertEquals(Collections.singletonList(website).get(0), websiteList.get(0));
-
-
+        Assert.assertEquals(2, time, DELTA);
     }
 }
