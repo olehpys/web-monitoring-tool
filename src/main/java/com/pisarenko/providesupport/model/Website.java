@@ -26,15 +26,15 @@ public class Website {
     private String url;
 
     @Column(name = "response_time")
-    private StateStatus responseTime;
+    private StateStatus expectedStateStatus;
 
     @Column(name = "response_code")
-    private String responseCode;
+    private String expectedResponseCode;
 
     @Column(name = "min_res_value")
-    private byte minResponseValue;
+    private byte expectedMinResponseValue;
 
     @Column(name = "max_res_value")
-    private byte maxResponseValue;
+    private byte expectedMaxResponseValue;
 
 }

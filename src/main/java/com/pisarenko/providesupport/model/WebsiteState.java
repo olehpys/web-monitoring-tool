@@ -20,7 +20,7 @@ public class WebsiteState {
 
     @Id
     @Column(name = "website_id")
-    private Website website;
+    private String id;
 
     @Column(name = "website_state")
     private StateStatus state;
@@ -32,6 +32,6 @@ public class WebsiteState {
     private String responseCode;
 
     @Column(name = "response_time")
-    private String responseTime;
+    private double responseTime;
 
 }
