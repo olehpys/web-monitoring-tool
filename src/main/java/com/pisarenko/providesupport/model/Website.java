@@ -26,7 +26,7 @@ public class Website {
     private String url;
 
     @Column(name = "response_time")
-    private ResponseTime responseTime;
+    private StateStatus responseTime;
 
     @Column(name = "response_code")
     private String responseCode;
