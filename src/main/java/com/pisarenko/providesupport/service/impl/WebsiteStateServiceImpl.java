@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -25,17 +26,15 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
 
     @Override
     public WebsiteState getStatus(Website website) {
-
+        ResponseEntity<String> res = getUrlResponse(website);
         WebsiteState websiteState = WebsiteState.builder()
                 .id(website.getId())
-                .contentLength(getContentLength(website))
-                .responseCode(getResponseCode(website))
+                .contentLength(getContentLength(res))
+                .responseCode(getResponseCode(res))
                 .responseTime(getResponseTime(website))
                 .state(website.getExpectedStateStatus())
                 .build();
-
-        if (getContentLength(website) > website.getExpectedMaxResponseValue() || !getResponseCode(website).equals(website.getExpectedResponseCode())) {
-
+        if (getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
             websiteState.setState(StateStatus.CRITICAL);
         }
         return websiteStateRepository.save(websiteState);
@@ -43,22 +42,28 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
 
     @Override
     public List<WebsiteState> getStatuses(List<Website> websites) {
+        List<WebsiteState> websiteStateList = new ArrayList<>();
         for (Website website : websites) {
-            getStatus(website);
+            WebsiteState saved = getStatus(website);
+            websiteStateList.add(saved);
         }
-        return websiteStateRepository.findAll();
+        return websiteStateList;
     }
 
     @Override
-    public long getContentLength(Website website) {
-        ResponseEntity<String> response = restTemplate.getForEntity(website.getUrl(), String.class);
+    public ResponseEntity<String> getUrlResponse(Website website) {
+        return restTemplate.getForEntity(website.getUrl(), String.class);
+    }
+
+    @Override
+    public long getContentLength(ResponseEntity<String> response) {
+
         log.debug("Response content length is [{}]", response.getHeaders().getContentLength());
         return response.getHeaders().getContentLength();
     }
 
     @Override
-    public String getResponseCode(Website website) {
-        ResponseEntity<String> response = restTemplate.getForEntity(website.getUrl(), String.class);
+    public String getResponseCode(ResponseEntity<String> response) {
         log.debug("Response code is [{}]", response.getStatusCode().toString());
         return response.getStatusCode().toString();
     }

@@ -2,6 +2,7 @@ package com.pisarenko.providesupport.service;
 
 import com.pisarenko.providesupport.model.Website;
 import com.pisarenko.providesupport.model.WebsiteState;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -11,9 +12,11 @@ public interface WebsiteStateService {
 
     List<WebsiteState> getStatuses(List<Website> websites);
 
-    long getContentLength(Website website);
+    ResponseEntity<String> getUrlResponse(Website website);
 
-    String getResponseCode(Website website);
+    long getContentLength(ResponseEntity<String> response);
+
+    String getResponseCode(ResponseEntity<String> response);
 
     double getResponseTime(Website website);
 
