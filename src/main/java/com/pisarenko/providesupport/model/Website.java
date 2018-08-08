@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Builder
@@ -26,6 +23,7 @@ public class Website {
     private String url;
 
     @Column(name = "response_time")
+    @Enumerated(EnumType.STRING)
     private StateStatus expectedStateStatus;
 
     @Column(name = "response_code")
