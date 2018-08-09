@@ -29,6 +29,7 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
         ResponseEntity<String> res = getUrlResponse(website);
         WebsiteState websiteState = WebsiteState.builder()
                 .id(website.getId())
+                .url(website.getUrl())
                 .contentLength(getContentLength(res))
                 .responseCode(getResponseCode(res))
                 .responseTime(getResponseTime(website))

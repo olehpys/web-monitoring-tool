@@ -22,6 +22,9 @@ public class WebsiteState {
     @Column(name = "website_id")
     private String id;
 
+    @Column(name = "website_url")
+    private String url;
+
     @Column(name = "website_state")
     private StateStatus state;
 
