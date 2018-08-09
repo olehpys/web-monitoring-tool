@@ -8,7 +8,7 @@ public interface WebsiteService {
 
     Website createWebsite(Website website);
 
-    void updateWebsite(String id);
+    void updateWebsite(Website website);
 
     void deleteWebsite(String id);
 
