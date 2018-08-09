@@ -77,4 +77,9 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
         log.debug("Response time is [{}]", stopWatch.getTotalTimeSeconds());
         return stopWatch.getTotalTimeSeconds();
     }
+
+    @Override
+    public WebsiteState getStateById(String id) {
+        return websiteStateRepository.findWebsiteStateById(id);
+    }
 }

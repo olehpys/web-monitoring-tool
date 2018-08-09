@@ -20,4 +20,6 @@ public interface WebsiteStateService {
 
     double getResponseTime(Website website);
 
+    WebsiteState getStateById(String id);
+
 }

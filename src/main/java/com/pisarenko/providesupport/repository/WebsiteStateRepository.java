@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WebsiteStateRepository extends JpaRepository<WebsiteState, Website> {
+    WebsiteState findWebsiteStateById(String id);
 }
