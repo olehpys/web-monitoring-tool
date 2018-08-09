@@ -26,7 +26,7 @@ public class WebsiteServiceImpl implements WebsiteService {
     @Override
     public void updateWebsite(Website website) {
         Website updated = websiteRepository.save(website);
-        log.debug("Website: [{}] updated", updated);
+        log.debug("Website: [{}] updated", updated.getId());
     }
 
     @Override
