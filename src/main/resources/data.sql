@@ -1,5 +1,5 @@
-insert into websites (website_id, url, response_time, response_code, min_res_value, max_res_value)
-values ('1', 'https://telegram.org/', 'OK', '302', 0, 100000);
+insert into websites (website_id, url, response_time, response_code, website_status, min_res_value, max_res_value, date_from, date_to)
+values ('1', 'https://telegram.org/', 1, '200', 'ACTIVE', 0, 100000, '2018-08-09', '2018-08-11');
 
-insert into websites (website_id, url, response_time, response_code, min_res_value, max_res_value)
-values ('2', 'https://fb.com/', 'OK', '200', 0, 5);
+insert into websites (website_id, url, response_time, response_code, website_status, min_res_value, max_res_value, date_from, date_to)
+values ('2', 'https://fb.com/', 5, '200', 'ACTIVE', 0, 5, '2018-08-09', '2018-08-11');

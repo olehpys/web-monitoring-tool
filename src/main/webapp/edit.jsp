@@ -123,6 +123,24 @@
                                     <label for="inputMaxResponseValue">Maximal response size (bytes)</label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="form-label-group">
+                                    <input type="date" name="dateFrom" id="inputDateFrom"
+                                           class="form-control"
+                                           value="${website.dateFrom}" required="required"
+                                           autofocus="autofocus">
+                                    <label for="inputDateFrom">Date to start monitoring</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label-group">
+                                    <input type="date" name="dateTo" id="inputDateTo"
+                                           class="form-control"
+                                           value="${website.dateTo}" required="required"
+                                           autofocus="autofocus">
+                                    <label for="inputDateTo">Date to stop monitoring</label>
+                                </div>
+                            </div>
                             <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="websiteStatus"
                                     id="inlineFormCustomSelect">
                                 <option value="ACTIVE">Active</option>

@@ -82,21 +82,26 @@
                     <tr>
                         <th>ID</th>
                         <th>URL</th>
+                        <th>Status</th>
                         <th>Response time</th>
                         <th>Response code</th>
                         <th>Min response length</th>
                         <th>Max response length</th>
+                        <th>Date to start monitoring</th>
+                        <th>Date to stop monitoring</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>${model.expectedWebsite.id}</td>
                         <td>${model.expectedWebsite.url}</td>
+                        <td>${model.expectedWebsite.websiteStatus}</td>
                         <td>${model.expectedWebsite.expectedResponseTime}</td>
                         <td>${model.expectedWebsite.expectedResponseCode}</td>
                         <td>${model.expectedWebsite.expectedMinResponseValue}</td>
                         <td>${model.expectedWebsite.expectedMaxResponseValue}</td>
-
+                        <td>${model.expectedWebsite.dateFrom}</td>
+                        <td>${model.expectedWebsite.dateTo}</td>
                     </tr>
                     </tbody>
                 </table>
