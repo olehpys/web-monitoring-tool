@@ -1,6 +1,5 @@
 package com.pisarenko.providesupport.service;
 
-import com.pisarenko.providesupport.model.StateStatus;
 import com.pisarenko.providesupport.model.Website;
 import com.pisarenko.providesupport.repository.WebsiteRepository;
 import com.pisarenko.providesupport.service.impl.WebsiteServiceImpl;
@@ -32,7 +31,7 @@ public class WebsiteServiceTest {
         website = Website.builder()
                 .id("1")
                 .url("https://telegram.org/")
-                .expectedStateStatus(StateStatus.OK)
+                .expectedResponseTime(5)
                 .expectedResponseCode("200")
                 .expectedMinResponseValue(1)
                 .expectedMaxResponseValue(125)

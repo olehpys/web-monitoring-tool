@@ -1,6 +1,5 @@
 package com.pisarenko.providesupport.service;
 
-import com.pisarenko.providesupport.model.StateStatus;
 import com.pisarenko.providesupport.model.Website;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,6 +15,8 @@ public class WebsiteStateServiceTest {
 
     @Autowired
     WebsiteStateService restTemplateService;
+    @Autowired
+    WebsiteService websiteService;
 
     private Website website;
 
@@ -26,13 +27,19 @@ public class WebsiteStateServiceTest {
         website = Website.builder()
                 .id("1")
                 .url("https://telegram.org/")
-                .expectedStateStatus(StateStatus.OK)
+                .expectedResponseTime(5)
                 .expectedResponseCode("200")
                 .expectedMinResponseValue(1)
                 .expectedMaxResponseValue(125)
                 .build();
     }
 
+
+    @Test
+    public void addWebsiteTest() {
+        Website created = websiteService.createWebsite(website);
+        System.out.println(created);
+    }
 
     @Test
     public void getResponseTimeTest() {
