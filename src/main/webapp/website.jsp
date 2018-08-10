@@ -125,7 +125,7 @@
                         <th>State</th>
                         <th>Response code</th>
                         <th>Response time</th>
-                        <th>Content length</th>
+                        <th>Response length</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -116,7 +116,7 @@
                                            class="form-control"
                                            placeholder="Minimal response time size (bytes)" required="required"
                                            autofocus="autofocus">
-                                    <label for="inputMinResponseValue">Minimal response size (bytes)</label>
+                                    <label for="inputMinResponseValue">Minimal response length (bytes)</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -125,7 +125,7 @@
                                            class="form-control"
                                            placeholder="Maximal response size (bytes)" required="required"
                                            autofocus="autofocus">
-                                    <label for="inputMaxResponseValue">Maximal response size (bytes)</label>
+                                    <label for="inputMaxResponseValue">Maximal response length (bytes)</label>
                                 </div>
                             </div>
                             <div class="form-group">
