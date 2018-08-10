@@ -56,6 +56,12 @@
                 <span>Dashboard</span>
             </a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/all">
+                <i class="fas fa-fw fa-bookmark"></i>
+                <span>All websites</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="/add.jsp">
                 <i class="fas fa-fw fa-folder"></i>
