@@ -65,6 +65,9 @@
                 <li class="breadcrumb-item">
                     <a href="/">Dashboard</a>
                 </li>
+                <li class="breadcrumb-item">
+                    <a href="/website/${website.id}">Website details</a>
+                </li>
                 <li class="breadcrumb-item active">Edit website</li>
             </ol>
 
