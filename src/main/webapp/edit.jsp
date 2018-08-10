@@ -89,9 +89,9 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
-                                    <input type="text" name="expectedStateStatus" id="inputRespTime"
+                                    <input type="text" name="expectedResponseTime" id="inputRespTime"
                                            class="form-control"
-                                           value="${website.expectedStateStatus}" required="required"
+                                           value="${website.expectedResponseTime}" required="required"
                                            autofocus="autofocus">
                                     <label for="inputRespTime">Response time (sec)</label>
                                 </div>
@@ -123,6 +123,12 @@
                                     <label for="inputMaxResponseValue">Maximal response size (bytes)</label>
                                 </div>
                             </div>
+                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="websiteStatus"
+                                    id="inlineFormCustomSelect">
+                                <option value="ACTIVE">Active</option>
+                                <option value="INACTIVE">Inactive</option>
+                            </select>
+                            <br><br>
                             <input type="submit" class="btn btn-primary btn-block" value="Update website"/>
                         </form>
                     </div>

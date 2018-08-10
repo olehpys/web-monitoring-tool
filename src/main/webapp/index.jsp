@@ -135,29 +135,23 @@
     }, 300000);
 </script>
 
-
 <script>
-    var playerCritical = document.createElement('critical');
-    playerCritical.src = '/sounds/critical.mp3';
-    playerCritical.preload = 'auto';
+
+    var player = document.createElement('audio');
+    var player1 = document.createElement('audio');
+    player.src = '/sounds/warning.mp3';
+    player1.src = 'sounds/critical.mp3';
+    player.preload = 'auto';
+    player1.preload = 'auto';
 
     window.setTimeout(function () {
         if ($("*:contains('CRITICAL')").length > 0) {
-            // console.log('Customer detected, playing sound...');
-            playerCritical.play();
+            console.log('Critical detected, playing sound...');
+            player1.play();
         }
-    }, 1000);
-
-</script>
-
-<script>
-    var playerWarning = document.createElement('warning');
-    playerWarning.src = '/sounds/warning.mp3';
-    playerWarning.preload = 'auto';
-
-    window.setTimeout(function () {
-        if ($("*:contains('WARNING')").length > 0) {
-            playerWarning.play();
+        else if ($("*:contains('WARNING')").length > 0) {
+            console.log('Warning detected, playing sound...');
+            player.play();
         }
     }, 1000);
 

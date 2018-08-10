@@ -122,6 +122,9 @@
                                     <label for="inputMaxResponseValue">Maximal response size (bytes)</label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <input type="hidden" name="websiteStatus" value="ACTIVE">
+                            </div>
                             <input type="submit" class="btn btn-primary btn-block" value="Add website"/>
                         </form>
                     </div>
