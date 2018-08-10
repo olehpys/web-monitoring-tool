@@ -27,15 +27,21 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
     @Override
     public WebsiteState getState(Website website) {
         ResponseEntity<String> res = getUrlResponse(website);
+
+
         WebsiteState websiteState = WebsiteState.builder()
                 .id(website.getId())
                 .url(website.getUrl())
                 .contentLength(getContentLength(res))
                 .responseCode(getResponseCode(res))
                 .responseTime(getResponseTime(website))
-                .state(website.getExpectedStateStatus())
                 .build();
-        if (getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
+        if (getResponseTime(website) < website.getExpectedResponseTime()) {
+            websiteState.setState(StateStatus.OK);
+        } else if (website.getExpectedResponseTime() < getResponseTime(website)) {
+            websiteState.setState(StateStatus.WARNING);
+        }
+        if (getContentLength(res) < 0 || getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
             websiteState.setState(StateStatus.CRITICAL);
         }
         return websiteStateRepository.save(websiteState);

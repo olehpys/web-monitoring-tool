@@ -23,11 +23,14 @@ public class Website {
     private String url;
 
     @Column(name = "response_time")
-    @Enumerated(EnumType.STRING)
-    private StateStatus expectedStateStatus;
+    private double expectedResponseTime;
 
     @Column(name = "response_code")
     private String expectedResponseCode;
+
+    @Column(name = "website_status")
+    @Enumerated(EnumType.STRING)
+    private WebsiteStatus websiteStatus;
 
     @Column(name = "min_res_value")
     private long expectedMinResponseValue;
