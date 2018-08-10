@@ -16,4 +16,6 @@ public interface WebsiteService {
 
     List<Website> getAllWebsites();
 
+    List<Website> getActiveWebsites();
+
 }

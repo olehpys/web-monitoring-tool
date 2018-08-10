@@ -27,10 +27,18 @@ public class WebsiteController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     ModelAndView websiteStates() {
-        List<WebsiteState> websitesStates = websiteStateService.getStates(websiteService.getAllWebsites());
+        List<WebsiteState> websitesStates = websiteStateService.getStates(websiteService.getActiveWebsites());
         ModelAndView states = new ModelAndView("index");
         states.addObject("websitesStates", websitesStates);
         return states;
+    }
+
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    ModelAndView allWebsites() {
+        List<Website> websites = websiteService.getAllWebsites();
+        ModelAndView allWebsites = new ModelAndView("all");
+        allWebsites.addObject("websites", websites);
+        return allWebsites;
     }
 
     @RequestMapping(value = "/website/add", method = RequestMethod.POST)

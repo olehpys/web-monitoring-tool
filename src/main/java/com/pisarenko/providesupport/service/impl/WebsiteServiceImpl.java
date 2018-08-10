@@ -44,4 +44,9 @@ public class WebsiteServiceImpl implements WebsiteService {
     public List<Website> getAllWebsites() {
         return websiteRepository.findAll();
     }
+
+    @Override
+    public List<Website> getActiveWebsites() {
+        return websiteRepository.findActiveWebsites();
+    }
 }
