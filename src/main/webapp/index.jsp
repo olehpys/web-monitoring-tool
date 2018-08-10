@@ -128,6 +128,14 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
+
+<script>
+    setInterval(function () {
+        window.location.reload();
+    }, 300000);
+</script>
+
+
 <script>
     var playerCritical = document.createElement('critical');
     playerCritical.src = '/sounds/critical.mp3';
