@@ -37,12 +37,11 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
                 .responseCode(getResponseCode(res))
                 .responseTime(getResponseTime(website))
                 .build();
-        if (getResponseTime(website) < website.getExpectedResponseTime() && isWebsiteActive(website)) {
+        if (getResponseTime(website) < website.getExpectedResponseTime()) {
             websiteState.setState(StateStatus.OK);
-        } else if (website.getExpectedResponseTime() < getResponseTime(website) && isWebsiteActive(website)) {
+        } else
             websiteState.setState(StateStatus.WARNING);
-        }
-        if (!isWebsiteActive(website) || getContentLength(res) < 0 || getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
+        if (getContentLength(res) < 0 || getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
             websiteState.setState(StateStatus.CRITICAL);
         }
         return websiteStateRepository.save(websiteState);
