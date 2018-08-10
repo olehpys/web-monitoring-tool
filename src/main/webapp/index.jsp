@@ -128,7 +128,32 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
+<script>
+    var playerCritical = document.createElement('critical');
+    playerCritical.src = '/sounds/critical.mp3';
+    playerCritical.preload = 'auto';
 
+    window.setTimeout(function () {
+        if ($("*:contains('CRITICAL')").length > 0) {
+            // console.log('Customer detected, playing sound...');
+            playerCritical.play();
+        }
+    }, 1000);
+
+</script>
+
+<script>
+    var playerWarning = document.createElement('warning');
+    playerWarning.src = '/sounds/warning.mp3';
+    playerWarning.preload = 'auto';
+
+    window.setTimeout(function () {
+        if ($("*:contains('WARNING')").length > 0) {
+            playerWarning.play();
+        }
+    }, 1000);
+
+</script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="/vendor/jquery/jquery.min.js"></script>
