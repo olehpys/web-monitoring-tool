@@ -3,6 +3,7 @@ package com.pisarenko.providesupport.service.impl;
 import com.pisarenko.providesupport.model.StateStatus;
 import com.pisarenko.providesupport.model.Website;
 import com.pisarenko.providesupport.model.WebsiteState;
+import com.pisarenko.providesupport.model.WebsiteStatus;
 import com.pisarenko.providesupport.repository.WebsiteStateRepository;
 import com.pisarenko.providesupport.service.WebsiteStateService;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,7 @@ import org.springframework.util.StopWatch;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -28,7 +30,6 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
     public WebsiteState getState(Website website) {
         ResponseEntity<String> res = getUrlResponse(website);
 
-
         WebsiteState websiteState = WebsiteState.builder()
                 .id(website.getId())
                 .url(website.getUrl())
@@ -36,12 +37,12 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
                 .responseCode(getResponseCode(res))
                 .responseTime(getResponseTime(website))
                 .build();
-        if (getResponseTime(website) < website.getExpectedResponseTime()) {
+        if (getResponseTime(website) < website.getExpectedResponseTime() && isWebsiteActive(website)) {
             websiteState.setState(StateStatus.OK);
-        } else if (website.getExpectedResponseTime() < getResponseTime(website)) {
+        } else if (website.getExpectedResponseTime() < getResponseTime(website) && isWebsiteActive(website)) {
             websiteState.setState(StateStatus.WARNING);
         }
-        if (getContentLength(res) < 0 || getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
+        if (!isWebsiteActive(website) || getContentLength(res) < 0 || getContentLength(res) > website.getExpectedMaxResponseValue() || !getResponseCode(res).equals(website.getExpectedResponseCode())) {
             websiteState.setState(StateStatus.CRITICAL);
         }
         return websiteStateRepository.save(websiteState);
@@ -87,5 +88,16 @@ public class WebsiteStateServiceImpl implements WebsiteStateService {
     @Override
     public WebsiteState getStateById(String id) {
         return websiteStateRepository.findWebsiteStateById(id);
+    }
+
+    @Override
+    public boolean isWebsiteActive(Website website) {
+        Date date = new Date();
+        if (!website.getDateFrom().after(date) && !website.getDateTo().before(date)) {
+            return true;
+        } else {
+            website.setWebsiteStatus(WebsiteStatus.INACTIVE);
+        }
+        return false;
     }
 }

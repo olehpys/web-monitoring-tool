@@ -22,4 +22,6 @@ public interface WebsiteStateService {
 
     WebsiteState getStateById(String id);
 
+    boolean isWebsiteActive(Website website);
+
 }
