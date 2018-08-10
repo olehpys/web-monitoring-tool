@@ -6,7 +6,7 @@
 	<groupId>com.pisarenko</groupId>
 	<artifactId>providesupport</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>providesupport</name>
 	<description></description>
