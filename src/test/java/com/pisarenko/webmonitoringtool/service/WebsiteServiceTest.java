@@ -1,8 +1,8 @@
-package com.pisarenko.providesupport.service;
+package com.pisarenko.webmonitoringtool.service;
 
-import com.pisarenko.providesupport.model.Website;
-import com.pisarenko.providesupport.repository.WebsiteRepository;
-import com.pisarenko.providesupport.service.impl.WebsiteServiceImpl;
+import com.pisarenko.webmonitoringtool.model.Website;
+import com.pisarenko.webmonitoringtool.repository.WebsiteRepository;
+import com.pisarenko.webmonitoringtool.service.impl.WebsiteServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

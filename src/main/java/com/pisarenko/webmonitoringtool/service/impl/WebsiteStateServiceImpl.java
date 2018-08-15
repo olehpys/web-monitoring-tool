@@ -1,11 +1,11 @@
-package com.pisarenko.providesupport.service.impl;
+package com.pisarenko.webmonitoringtool.service.impl;
 
-import com.pisarenko.providesupport.model.StateStatus;
-import com.pisarenko.providesupport.model.Website;
-import com.pisarenko.providesupport.model.WebsiteState;
-import com.pisarenko.providesupport.model.WebsiteStatus;
-import com.pisarenko.providesupport.repository.WebsiteStateRepository;
-import com.pisarenko.providesupport.service.WebsiteStateService;
+import com.pisarenko.webmonitoringtool.model.StateStatus;
+import com.pisarenko.webmonitoringtool.model.Website;
+import com.pisarenko.webmonitoringtool.model.WebsiteState;
+import com.pisarenko.webmonitoringtool.model.WebsiteStatus;
+import com.pisarenko.webmonitoringtool.repository.WebsiteStateRepository;
+import com.pisarenko.webmonitoringtool.service.WebsiteStateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

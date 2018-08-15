@@ -1,4 +1,4 @@
-package com.pisarenko.providesupport.exception;
+package com.pisarenko.webmonitoringtool.exception;
 
 public class ProvideSupportException extends RuntimeException {
 

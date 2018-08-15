@@ -1,7 +1,7 @@
-package com.pisarenko.providesupport.service;
+package com.pisarenko.webmonitoringtool.service;
 
-import com.pisarenko.providesupport.model.Website;
-import com.pisarenko.providesupport.model.WebsiteState;
+import com.pisarenko.webmonitoringtool.model.Website;
+import com.pisarenko.webmonitoringtool.model.WebsiteState;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

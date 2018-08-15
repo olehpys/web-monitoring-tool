@@ -1,13 +1,13 @@
-package com.pisarenko.providesupport;
+package com.pisarenko.webmonitoringtool;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class ProvidesupportApplication extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProvidesupportApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }

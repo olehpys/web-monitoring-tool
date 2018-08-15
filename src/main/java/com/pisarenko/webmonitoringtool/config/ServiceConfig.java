@@ -1,4 +1,4 @@
-package com.pisarenko.providesupport.config;
+package com.pisarenko.webmonitoringtool.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;

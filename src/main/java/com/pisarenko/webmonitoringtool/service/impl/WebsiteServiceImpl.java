@@ -1,8 +1,8 @@
-package com.pisarenko.providesupport.service.impl;
+package com.pisarenko.webmonitoringtool.service.impl;
 
-import com.pisarenko.providesupport.model.Website;
-import com.pisarenko.providesupport.repository.WebsiteRepository;
-import com.pisarenko.providesupport.service.WebsiteService;
+import com.pisarenko.webmonitoringtool.model.Website;
+import com.pisarenko.webmonitoringtool.repository.WebsiteRepository;
+import com.pisarenko.webmonitoringtool.service.WebsiteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

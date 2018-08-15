@@ -1,6 +1,6 @@
-package com.pisarenko.providesupport.repository;
+package com.pisarenko.webmonitoringtool.repository;
 
-import com.pisarenko.providesupport.model.Website;
+import com.pisarenko.webmonitoringtool.model.Website;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

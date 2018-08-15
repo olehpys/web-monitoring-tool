@@ -1,7 +1,7 @@
-package com.pisarenko.providesupport.repository;
+package com.pisarenko.webmonitoringtool.repository;
 
-import com.pisarenko.providesupport.model.Website;
-import com.pisarenko.providesupport.model.WebsiteState;
+import com.pisarenko.webmonitoringtool.model.Website;
+import com.pisarenko.webmonitoringtool.model.WebsiteState;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

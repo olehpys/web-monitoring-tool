@@ -1,4 +1,4 @@
-package com.pisarenko.providesupport.model;
+package com.pisarenko.webmonitoringtool.model;
 
 
 public enum StateStatus {
