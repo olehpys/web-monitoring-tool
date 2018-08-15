@@ -38,6 +38,3 @@ If you use the Spring Boot Maven or Gradle plugins to create an executable jar, 
 ```
 $ java -jar target/providesupport-0.0.1-SNAPSHOT.jar
 ```
-
-## Class diagram
-![alt diagram](https://i.imgur.com/qBeXL6u.png)
