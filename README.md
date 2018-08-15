@@ -5,7 +5,7 @@ This web service that will monitor the state of one or more external web applica
 ## Features
 
 ### Backend
-Backend was built by using Spring Boot Framework, H2 database,lombok library, Maven build tool. 
+Backend was built by using Spring Boot Framework, H2 database, lombok library, Maven build tool. 
 Application backend allows:
 - Do CRUD operations with objects
 - Do monitoring operation of given websites
@@ -38,6 +38,3 @@ If you use the Spring Boot Maven or Gradle plugins to create an executable jar, 
 ```
 $ java -jar target/providesupport-0.0.1-SNAPSHOT.jar
 ```
-
-## Class diagram
-![alt diagram](https://i.imgur.com/qBeXL6u.png)
