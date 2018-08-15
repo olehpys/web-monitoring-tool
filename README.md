@@ -36,5 +36,5 @@ If you cannot directly import your project into your IDE, you may be able to gen
 
 If you use the Spring Boot Maven or Gradle plugins to create an executable jar, you can run your application using java -jar, as shown in the following example:
 ```
-$ java -jar target/providesupport-0.0.1-SNAPSHOT.jar
+$ java -jar target/webmonitoringtool-0.0.1-SNAPSHOT.jar
 ```
